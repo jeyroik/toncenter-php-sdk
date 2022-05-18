@@ -1,6 +1,7 @@
 <?php
 
 use PHPUnit\Framework\TestCase;
+use tonc\components\addresses\Address;
 
 class GetAddressInformationTest extends TestCase
 {
