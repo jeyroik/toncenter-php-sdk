@@ -2,6 +2,8 @@
 namespace tonc\components\requests;
 
 use tonc\interfaces\requests\IRequestGetAddressInformation;
+use tonc\interfaces\responses\IResponseGetAddressInformation;
+use tonc\components\responses\ResponseGetAddressInformation;
 
 /**
  * Usage:
