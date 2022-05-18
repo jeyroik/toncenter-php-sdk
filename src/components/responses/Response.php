@@ -10,13 +10,29 @@ class Response implements IResponse
 
     public function isSuccess(): bool
     {
-        return $this->attributes[static::FIELD__STATUS] == 200;
+        $body = $this->getBodyAsArray();
+
+        return (bool) $body[static::FIELD__OK];
     }
 
     public function getResult(): array
     {
-        $body = $this->attributes[static::FIELD__BODY] ?? [];
+        $body = $this->getBodyAsArray();
 
-        return json_decode($body, true);
+        return $body[static::FIELD__RESULT] ?? [];
+    }
+
+    protected function getBody(): string
+    {
+        return $this->attributes[static::FIELD__BODY] ?? '';
+    }
+
+    protected function getBodyAsArray(): array
+    {
+        if (!isset($this->attributes[static::FIELD__BODY_AS_ARRAY])) {
+            $this->attributes[static::FIELD__BODY_AS_ARRAY] = json_decode($this->getBody(), true);
+        }
+
+        return $this->attributes[static::FIELD__BODY_AS_ARRAY];
     }
 }
