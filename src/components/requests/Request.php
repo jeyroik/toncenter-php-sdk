@@ -49,6 +49,11 @@ class Request implements IRequest
         return $this->attributes[static::FIELD__PARAMETERS] ?? [];
     }
 
+    public function getVersion(): int
+    {
+        return $this->attributes[static::FIELD__VERSION] ?? static::VERSION__DEFAULT;
+    }
+
     protected function runGet(): IResponse
     {
         $client = $this->getHttpClient();
