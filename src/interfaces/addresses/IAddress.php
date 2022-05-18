@@ -1,5 +1,5 @@
 <?php
-namespace tonc\interfaces\addresses\address;
+namespace tonc\interfaces\addresses;
 
 interface IAddress extends IAddressInformation
 {
