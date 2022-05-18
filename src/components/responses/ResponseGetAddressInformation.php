@@ -3,16 +3,16 @@ namespace tonc\components\responses;
 
 use tonc\components\THasAttributes;
 use tonc\interfaces\responses\IResponseGetAddressInformation;
-use tonc\components\addresses\Address;
+use tonc\components\addresses\AddressInformation;
 
 class ResponseGetAddressInformation extends Response implements IResponseGetAddressInformation
 {
     use THasAttributes;
 
-    public function __toAddress(): IAddress
+    public function __toAddressInformation(): IAddressInformation
     {
         $result = $this->getResult();
 
-        return new Address($result);
+        return new AddressInformation($result);
     }
 }
