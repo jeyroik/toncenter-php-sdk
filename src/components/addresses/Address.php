@@ -33,7 +33,7 @@ class Address extends AddressInformation implements IAddress
 
         if ($response->isSuccess()) {
             $hash = $this->getHash();
-            $this->attributes = $response->toAddressInformation()->__toArray();
+            $this->attributes = $response->__toAddressInformation()->__toArray();
             $this->attributes[static::FIELD__HASH] = $hash;
         }
     }
