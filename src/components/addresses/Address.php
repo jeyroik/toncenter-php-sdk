@@ -7,6 +7,7 @@ use tonc\components\transactions\LastTransaction;
 use tonc\interfaces\blocks\IBlock;
 use tonc\components\blocks\Block;
 use tonc\components\THasAttributes;
+use tonc\components\requests\RequestGetAddressInformation;
 
 /**
  * Usage:
