@@ -32,7 +32,7 @@ class RequestGetAddressInformation implements IRequestGetAddressInformation
 
         $response = $request->run();
 
-        return new ResponseGetAddressInformation($response->getResult());
+        return new ResponseGetAddressInformation($response->__toArray());
     }
 
     protected function getAddressHash(): string
