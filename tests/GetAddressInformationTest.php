@@ -10,6 +10,6 @@ class GetAddressInformationTest extends TestCase
         $address = new Address([Address::FIELD__HASH => 'EQA6VbfxOrYGXvQw-VEpqeFKD1YDtX7JkQmENXOTV93Am0yr']);
         $address->loadInformation();
 
-        $this->assertEquals('raw.fullAccountState', $address->getType(), print_r($addess, true));
+        $this->assertEquals('raw.fullAccountState', $address->getType(), print_r($address, true));
     }
 }
