@@ -6,7 +6,7 @@ use tonc\interfaces\blocks\IBlock;
 use tonc\interfaces\ICanBeAsArray;
 use tonc\interfaces\IHaveAttributes;
 
-interface IAddress extends \ArrayAccess, \Iterator, IHaveAttributes
+interface IAddressInformation extends \ArrayAccess, \Iterator, IHaveAttributes
 {
     public const FIELD__BALANCE = 'balance';
     public const FIELD__LAST_TRANSACTION = 'last_transaction_id';
