@@ -1,6 +1,8 @@
 <?php
 namespace tonc\components\requests;
 
+use tonc\interfaces\requests\IRequestGetAddressInformation;
+
 /**
  * Usage:
  * $request = new RequestGetAddressInformation([
@@ -11,7 +13,7 @@ namespace tonc\components\requests;
  * $addressInformation = $response->__toAddressInformation();
  * echo $addressInformation->getBalance();
  */
-class RequestGetAddressInformation
+class RequestGetAddressInformation implements IRequestGetAddressInformation
 {
     public function run(): IResponseGetAddressInformation
     {
