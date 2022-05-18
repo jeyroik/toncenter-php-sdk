@@ -1,11 +1,12 @@
 <?php
-namespace tonc\components\request;
+namespace tonc\components\requests;
 
 use \GuzzleHttp\Client;
 use \GuzzleHttp\ClientInterface;
 use tonc\interfaces\responses\IResponse;
 use tonc\components\responses\Response;
 use tonc\components\THasAttributes;
+use tonc\interfaces\requests\IRequest;
 
 /**
  * Usage:
