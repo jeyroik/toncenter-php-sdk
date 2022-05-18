@@ -1,7 +1,7 @@
 <?php
 namespace tonc\interfaces\blocks;
 
-use tonc\interafces\IHaveAttributes;
+use tonc\interfaces\IHaveAttributes;
 
 interface IBlock extends IHaveAttributes
 {

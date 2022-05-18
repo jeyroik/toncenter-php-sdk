@@ -4,7 +4,7 @@ namespace tonc\interfaces\addresses;
 use tonc\interfaces\transactions\ILastTransaction;
 use tonc\interfaces\blocks\IBlock;
 use tonc\interfaces\ICanBeAsArray;
-use tonc\interafces\IHaveAttributes;
+use tonc\interfaces\IHaveAttributes;
 
 interface IAddress extends \ArrayAccess, \Iterator, IHaveAttributes
 {

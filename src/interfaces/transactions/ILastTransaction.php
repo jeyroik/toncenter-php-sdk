@@ -1,7 +1,7 @@
 <?php
 namespace tonc\interfaces\transactions;
 
-use tonc\interafces\IHaveAttributes;
+use tonc\interfaces\IHaveAttributes;
 
 interface ILastTransaction extends IHaveAttributes
 {

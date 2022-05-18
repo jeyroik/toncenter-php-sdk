@@ -1,7 +1,7 @@
 <?php
 namespace tonc\interfaces\responses;
 
-use tonc\interafces\IHaveAttributes;
+use tonc\interfaces\IHaveAttributes;
 
 interface IResponse extends \ArrayAccess, \Iterator, IHaveAttributes
 {
