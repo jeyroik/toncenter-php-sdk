@@ -12,7 +12,8 @@ jobs:
         php-version:
           - "8.1"
     env:
-      TONC__TOKEN=${{ secrets.TONCENTER_TOKEN }}
+      TONC__TOKEN: ${{ secrets.TONCENTER_TOKEN }}
+      
     steps:
     - uses: actions/checkout@v2
 
