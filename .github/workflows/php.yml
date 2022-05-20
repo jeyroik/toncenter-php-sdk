@@ -11,7 +11,8 @@ jobs:
       matrix:
         php-version:
           - "8.1"
-
+    env:
+      TONC__TOKEN=${{ secrets.TONCENTER_TOKEN }}
     steps:
     - uses: actions/checkout@v2
 
@@ -26,9 +27,6 @@ jobs:
 
     - name: Install dependencies
       run: composer install --prefer-dist --no-progress --no-suggest
-
-    - name: Set toncenter token
-      run: export TONC__TOKEN=${{ secrets.TONCENTER_TOKEN }}
 
     - name: Run test suites
       run: composer run-script test
