@@ -21,6 +21,8 @@ Set your token (there is rps limit 1 without token)
 toncenter-php-sdk$ export TONC__TOKEN=<your token>
 ```
 
+You can get your token in the [@tonapibot](https://t.me/tonapibot) to get access with higher limits.
+
 ## Working with address
 
 ```php
