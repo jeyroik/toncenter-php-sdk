@@ -1,0 +1,21 @@
+{
+    "name": "jeyroik/toncenter-php-sdk",
+    "description": "PHP SDK for toncenter.com",
+    "require": {
+        "guzzlehttp/guzzle": "7.*"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^9",
+        "phpstan/phpstan": "0.*"
+    },
+    "autoload": {
+        "psr-4": {
+            "tonc\\": "src/",
+            "tests\\": "tests/"
+        }
+    },
+    "scripts": {
+        "test": "vendor/bin/phpunit --testdox --coverage-clover=coverage.xml --whitelist=src tests",
+        "stan": "vendor/bin/phpstan analyse -l 5 src"
+    }
+}
