@@ -79,7 +79,10 @@ class Request implements IRequest
         $client->request(
             $this->getMethod(), 
             $this->getEndpoint(), [
-            'form_params' => $this->getParameters()
+            'form_params' => $this->getParameters(),
+            'headers' => [
+                'X-API-KEY' => getenv('TONC__TOKEN') ?: ''
+            ]
         ]);
 
         return new Response([
