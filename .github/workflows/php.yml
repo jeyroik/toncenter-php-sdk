@@ -27,9 +27,6 @@ jobs:
     - name: Install dependencies
       run: composer install --prefer-dist --no-progress --no-suggest
 
-    - name: Copy .env
-      run: cp tests/.env .env
-
     - name: Run test suites
       run: composer run-script test
 
