@@ -15,6 +15,12 @@ SDK allow to work with https://toncenter.com/api/v2/
 
 # usage
 
+Set your token (there is rps limit 1 without token)
+
+```bash
+toncenter-php-sdk$ export TONC__TOKEN=<your token>
+```
+
 ## Working with address
 
 ```php

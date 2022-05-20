@@ -57,7 +57,6 @@ class TransactionsTest extends TestCase
 
     public function testTransactionsRepositoryOne()
     {
-        sleep(2);// toncenter rps limit 1
         $repo = new TransactionRepository();
 
         $transaction = $repo->one(
@@ -79,7 +78,6 @@ class TransactionsTest extends TestCase
             'Incorrect transaction: '.PHP_EOL.print_r($transaction, true)
         );
 
-        sleep(2);// toncenter rps limit 1
         $transaction = $repo->one(
             'EQA6VbfxOrYGXvQw-VEpqeFKD1YDtX7JkQmENXOTV93Am0yr',
             [
@@ -94,7 +92,6 @@ class TransactionsTest extends TestCase
 
     public function testTransactionsRepositoryAll()
     {
-        sleep(2);// toncenter rps limit 1
         $repo = new TransactionRepository();
 
         $transactions = $repo->all(
@@ -110,7 +107,6 @@ class TransactionsTest extends TestCase
 
     public function testTransactionOutMessages()
     {
-        sleep(2);// toncenter rps limit 1
         $repo = new TransactionRepository();
 
         $transaction = $repo->one(

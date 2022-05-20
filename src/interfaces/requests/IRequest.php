@@ -17,7 +17,7 @@ interface IRequest
 
     public const FIELD__PARAMETERS = 'parameters';
     
-    public const BASE__URL = 'https://toncenter.com';
+    public const BASE__URL = 'https://toncenter.com/api/v2/';
 
     public function run(): IResponse;
 
