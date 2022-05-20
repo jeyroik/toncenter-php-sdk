@@ -41,7 +41,7 @@ class Request implements IRequest
     {
         $path = $this->attributes[static::FIELD__ENDPOINT] ?? '';
 
-        return static::BASE__URL . $this->getVersionPrefix() . $path;
+        return static::BASE__URL . $path;
     }
 
     public function getParameters(): array
@@ -59,7 +59,12 @@ class Request implements IRequest
         $client = $this->getHttpClient();
         $response = $client->request(
             $this->getMethod(), 
-            $this->getEndpoint() . '?' . http_build_query($this->getParameters())
+            $this->getEndpoint() . '?' . http_build_query($this->getParameters()),
+            [
+                'headers' => [
+                    'X-API-KEY' => getenv('TONC__TOKEN') ?: ''
+                ]
+            ]
         );
 
         return new Response([
@@ -81,16 +86,6 @@ class Request implements IRequest
             Response::FIELD__BODY => $response->getBody(),
             Response::FIELD__STATUS => $response->getStatusCode()
         ]);
-    }
-
-    protected function getVersionPrefix(): string
-    {
-        $prefixes = [
-            1 => '/api/v1/',
-            2 => '/api/v2/'
-        ];
-
-        return $prefixes[$this->getVersion()] ?? $prefixes[static::VERSION__DEFAULT];
     }
 
     protected function getHttpClient(): ClientInterface
