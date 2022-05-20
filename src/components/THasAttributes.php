@@ -12,4 +12,9 @@ trait THasAttributes
     {
         $this->attributes = $attributes;
     }
+
+    public function getAttribute(string $name, $default = null): mixed
+    {
+        return $this->attributes[$name] ?? $default;
+    }
 }
