@@ -71,8 +71,15 @@ class TransactionRepository implements ITransactionRepository
         $transactions = [];
 
         foreach ($response->getTransactions() as $transaction) {
-            foreach($query as $field => list($condition, $value)) {
-                if (!$this->is($transaction[$field], $condition, $value)) {
+            foreach($query as $field => $target) {
+                $key = array_key_first($target);
+                if (is_numeric($key)) {
+                    list($condition, $value) = $target;
+                } else {
+                    $condition = '';
+                    $value = $target;
+                }
+                if (!$this->is($transaction, $field, $condition, $value)) {
                     break;
                 }
             }
